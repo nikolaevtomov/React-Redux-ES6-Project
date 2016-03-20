@@ -1,13 +1,13 @@
 ### React es6 Startup
 
-## Getting up and running
+#### Getting up and running
 
 1. Run `npm install`
 2. Run `gulp dev`
 3. Run `gulp prod`
 4. Run `gulp test`
 
-# This startup project includes following libraries:
+#### This startup project includes following libraries:
 
 - [ReactJS](https://github.com/facebook/react)
 - [React Router](https://github.com/rackt/react-router)
