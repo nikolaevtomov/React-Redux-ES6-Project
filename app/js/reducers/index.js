@@ -1,10 +1,11 @@
 'use strict';
 
-import { combineReducers }  from 'redux';
+import { combineReducers } from 'redux';
+import sampleShowHide      from './sample_reducer';
 
 const rootReducer = combineReducers({
-  // books: BooksReducer,
-  // activeBook: ActiveBook
+  // state: (state = {}) => state
+  sampleShowHide
 });
 
 export default rootReducer;

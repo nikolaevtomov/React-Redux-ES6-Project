@@ -9,7 +9,6 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-
   }
 
   render() {
@@ -21,7 +20,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 export default App;

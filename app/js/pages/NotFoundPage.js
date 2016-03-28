@@ -14,8 +14,8 @@ class NotFoundPage extends Component {
       <DocumentTitle title="404: Not Found">
         <section className="not-found-page">
 
-          Page Not Found
-
+          <h3>Page Not Found</h3>
+          
         </section>
       </DocumentTitle>
     );
