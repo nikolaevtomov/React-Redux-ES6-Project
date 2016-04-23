@@ -4,9 +4,9 @@ import React, { Component }       from 'react';
 import { connect }                from 'react-redux';
 import { Link }                   from 'react-router';
 import DocumentTitle              from 'react-document-title';
-import { sampleShow, sampleHide } from '../actions/index';
+import { sampleShow, sampleHide } from '../../core/actions/index';
 
-export const SamplePage = ({ visible, dispatch }) => {
+export const SampleContainer = ({ visible, dispatch }) => {
 
   const handleActivate = () => {
     dispatch(sampleShow());
@@ -40,4 +40,4 @@ export default connect((state) => {
   return {
     visible: state.sampleShowHide
   };
-})(SamplePage);
+})(SampleContainer);

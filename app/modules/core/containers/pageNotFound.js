@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import DocumentTitle        from 'react-document-title';
 
-class NotFoundPage extends Component {
+class PageNotFound extends Component {
 
   constructor(props) {
     super(props);
@@ -15,7 +15,7 @@ class NotFoundPage extends Component {
         <section className="not-found-page">
 
           <h3>Page Not Found</h3>
-          
+
         </section>
       </DocumentTitle>
     );
@@ -23,4 +23,4 @@ class NotFoundPage extends Component {
 
 }
 
-export default NotFoundPage;
+export default PageNotFound;

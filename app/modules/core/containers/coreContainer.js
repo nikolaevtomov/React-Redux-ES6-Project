@@ -2,10 +2,10 @@
 
 import React, { Component } from 'react';
 
-import Header               from './modules/components/Header';
-import Footer               from './modules/components/Footer';
+import Header               from '../components/header';
+import Footer               from '../components/footer';
 
-class App extends Component {
+class CoreContainer extends Component {
 
   constructor(props) {
     super(props);
@@ -22,4 +22,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default CoreContainer;

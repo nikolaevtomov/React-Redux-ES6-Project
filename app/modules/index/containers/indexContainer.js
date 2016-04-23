@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Link }             from 'react-router';
 import DocumentTitle        from 'react-document-title';
 
-class HomePage extends Component {
+class indexContainer extends Component {
 
   constructor(props) {
     super(props);
@@ -28,4 +28,4 @@ class HomePage extends Component {
 
 }
 
-export default HomePage;
+export default indexContainer;

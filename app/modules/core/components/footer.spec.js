@@ -3,7 +3,7 @@
 import React     from 'react';
 import TestUtils from 'react-addons-test-utils';
 
-import Footer    from './Footer';
+import Footer    from './footer';
 
 describe('Component: Footer', function() {
 

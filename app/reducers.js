@@ -1,10 +1,9 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import sampleShowHide      from './sample_reducer';
+import sampleShowHide      from './modules/core/reducers/core_reducer';
 
 const rootReducer = combineReducers({
-  // state: (state = {}) => state
   sampleShowHide
 });
 
