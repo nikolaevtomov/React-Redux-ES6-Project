@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 
-import Header               from './components/Header';
-import Footer               from './components/Footer';
+import Header               from './modules/components/Header';
+import Footer               from './modules/components/Footer';
 
 class App extends Component {
 
@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-          {this.props.children}
+          { this.props.children }
         <Footer />
       </div>
     );

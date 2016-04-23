@@ -20,7 +20,7 @@ import config       from '../config';
 function buildScript(file, watch) {
 
   var bundler = browserify({
-    entries: [config.sourceDir + 'js/' + file],
+    entries: [config.sourceDir + file],
     debug: !global.isProd,
     cache: {},
     packageCache: {},

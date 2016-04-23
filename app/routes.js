@@ -3,10 +3,10 @@
 import React                                         from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import App                                           from './App';
-import HomePage                                      from './pages/HomePage';
-import SamplePage                                    from './pages/SamplePage';
-import NotFoundPage                                  from './pages/NotFoundPage';
+import App                                           from './app';
+import HomePage                                      from './modules/pages/HomePage';
+import SamplePage                                    from './modules/pages/SamplePage';
+import NotFoundPage                                  from './modules/pages/NotFoundPage';
 
 export default () => (
   <Router history={ browserHistory }>

@@ -6,8 +6,8 @@ const config = {
   UIPort: 3001,
 
   scripts: {
-    src: './app/js/**/*.js',
-    dest: './build/js/'
+    src: './app/**/**/*.js',
+    dest: './build/modules/'
   },
 
   images: {
@@ -16,15 +16,15 @@ const config = {
   },
 
   styles: {
-    src: './app/styles/**/*.scss',
-    dest: './build/css/'
+    src: ['./app/styles/**/*.scss', './app/modules/**/*.scss'],
+    dest: './build/styles/'
   },
 
   sourceDir: './app/',
 
   buildDir: './build/',
 
-  testFiles: './__tests__/**/*.{js,jsx}',
+  testFiles: './app/**/**/*.spec.{js,jsx}',
 
   assetExtensions: [
     'js',
