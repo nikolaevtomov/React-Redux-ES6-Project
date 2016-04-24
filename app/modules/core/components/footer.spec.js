@@ -1,18 +1,27 @@
 'use strict';
 
-import React     from 'react';
-import TestUtils from 'react-addons-test-utils';
+import React            from 'react';
+import TestUtils        from 'react-addons-test-utils';
+import Footer           from './footer';
 
-import Footer    from './footer';
+function testRenderer() {
+  const renderer = TestUtils.createRenderer();
+  renderer.render(<Footer />);
+  const output = renderer.getRenderOutput();
 
-describe('Component: Footer', function() {
+  return {
+    output,
+    renderer,
+  };
+}
 
-  it('should render properly', function() {
-    const footer = TestUtils.renderIntoDocument(
-      <Footer />
-    );
+describe('Component: Footer', () => {
 
-    TestUtils.findRenderedDOMComponentWithTag.bind(null, footer, 'footer').should.not.throw();
+  it('should render properly', () => {
+
+    const { output } = testRenderer();
+    expect(output.type).to.equal('footer');
+
   });
 
 });

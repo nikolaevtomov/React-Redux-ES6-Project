@@ -5,7 +5,7 @@ import browserSync from 'browser-sync';
 import gulp        from 'gulp';
 import config      from '../config';
 
-gulp.task('browserSync', function() {
+gulp.task('browserSync', () => {
 
   const DEFAULT_FILE = 'index.html';
   const ASSET_EXTENSION_REGEX = new RegExp(`\\b(?!\\?)\\.(${config.assetExtensions.join('|')})\\b(?!\\.)`, 'i');

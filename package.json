@@ -2,7 +2,7 @@
   "name": "react-es6-startup",
   "version": "0.0.1",
   "author": "",
-  "description": "Starter App with React, Redux, es6, Browserify, SASS, and Gulp.",
+  "description": "Startup project with React, Redux, es6, Browserify, SASS, and Gulp.",
   "repository": {
     "type": "git",
     "url": ""
@@ -29,6 +29,7 @@
     "babelify": "^7.2.0",
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
+    "chai": "^3.5.0",
     "debowerify": "^1.4.1",
     "del": "^2.2.0",
     "eslint-plugin-react": "^4.2.3",
@@ -51,11 +52,11 @@
     "jsdom": "^8.1.0",
     "lodash": "^4.6.1",
     "mocha": "^2.4.5",
-    "react": "^0.14.7",
-    "react-addons-test-utils": "^0.14.7",
+    "react": "^15.0.1",
+    "react-addons-test-utils": "^15.0.1",
     "react-document-title": "^2.0.1",
-    "react-dom": "^0.14.7",
-    "react-redux": "^4.4.1",
+    "react-dom": "^15.0.1",
+    "react-redux": "^4.4.5",
     "react-router": "^2.0.1",
     "redux": "^3.3.1",
     "redux-promise": "^0.5.3",
@@ -63,6 +64,7 @@
     "run-sequence": "^1.1.5",
     "should": "^8.2.2",
     "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
     "superagent": "^1.8.1",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0",
@@ -71,6 +73,7 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/gulp lint",
-    "test": "./node_modules/.bin/gulp test"
+    "test": "./node_modules/.bin/gulp test",
+    "test:watch": "./node_modules/.bin/gulp test:watch"
   }
 }

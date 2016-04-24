@@ -1,20 +1,14 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React from 'react';
 
-class Footer extends Component {
+const Footer = () => {
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <footer>
-        Footer
-      </footer>
-    );
-  }
+  return (
+    <footer>
+      Footer
+    </footer>
+  );
 
 }
 

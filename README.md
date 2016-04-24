@@ -6,6 +6,7 @@
 2. Run `gulp dev`
 3. Run `gulp prod`
 4. Run `gulp test`
+5. Run `gulp test:watch`
 
 #### This startup project includes following libraries:
 

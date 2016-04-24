@@ -8,7 +8,7 @@ import autoprefixer from 'gulp-autoprefixer';
 import handleErrors from '../util/handle-errors';
 import config       from '../config';
 
-gulp.task('sass', function() {
+gulp.task('sass', () => {
 
   return gulp.src(config.styles.src)
     .pipe(sass({

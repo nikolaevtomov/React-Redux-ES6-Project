@@ -1,10 +1,12 @@
 'use strict';
 
-import gulp      from 'gulp';
-import { jsdom } from 'jsdom';
-import { argv }  from 'yargs';
-import gjc       from 'gulp-jsx-coverage';
-import config    from '../config';
+import gulp         from 'gulp';
+import { jsdom }    from 'jsdom';
+import { argv }     from 'yargs';
+import chai         from 'chai';
+import gjc          from 'gulp-jsx-coverage';
+import handleErrors from '../util/handle-errors';
+import config       from '../config';
 
 gulp.task('test', () => {
 
@@ -34,10 +36,10 @@ gulp.task('test', () => {
   global.navigator.userAgent = 'jsdom';
   global.navigator.appVersion = '';
 
-  // Ensure that 'should' and 'sinon' library methods will be
+  // Ensure that 'sinon' and 'chai' library methods will be
   // available to all tests
-  global.Should = require('should');
   global.sinon = require('sinon');
+  global.expect = chai.expect;
 
   return (gjc.createTask({
     src: files,
@@ -66,15 +68,15 @@ gulp.task('test', () => {
     babel: {
       sourceMap: 'both'
     },
-
     cleanup: () => {
-      process.exit(0);
+      // process.exit(0);
     }
   }))();
 
 });
 
-// gulp.task('test:watch', () => {
-//
-//
-// });
+gulp.task('test:watch', ['test'], () => {
+
+  gulp.watch([config.testFiles, config.scripts.src], ['test']);
+
+});

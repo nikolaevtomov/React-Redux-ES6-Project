@@ -3,7 +3,7 @@
 import gulp   from 'gulp';
 import config from '../config';
 
-gulp.task('copyIcons', function() {
+gulp.task('copyIcons', () => {
 
   // Copy icons from root directory to build/
   return gulp.src(['./*.png', './favicon.ico'])

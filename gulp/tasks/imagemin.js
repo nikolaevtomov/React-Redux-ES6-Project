@@ -6,7 +6,7 @@ import imagemin    from 'gulp-imagemin';
 import browserSync from 'browser-sync';
 import config      from '../config';
 
-gulp.task('imagemin', function() {
+gulp.task('imagemin', () => {
 
   // Run imagemin task on all images
   return gulp.src(config.images.src)
