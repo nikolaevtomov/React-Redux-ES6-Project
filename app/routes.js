@@ -3,16 +3,16 @@
 import React                                         from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import CoreContainer                                 from './modules/core/containers/coreContainer';
-import IndexContainer                                from './modules/index/containers/indexContainer';
-import SampleContainer                               from './modules/sample/containers/sampleContainer';
-import PageNotFound                                  from './modules/core/containers/pageNotFound';
+import IndexContainer                                from './containers/';
+import HomeContainer                                 from './containers/homeContainer';
+import SampleContainer                               from './containers/sampleContainer';
+import PageNotFound                                  from './containers/pageNotFound';
 
 export default () => (
   <Router history={ browserHistory }>
-    <Route path="/" component={ CoreContainer }>
+    <Route path="/" component={ IndexContainer }>
 
-      <IndexRoute component={ IndexContainer } />
+      <IndexRoute component={ HomeContainer } />
       <Route path="/sample" component={ SampleContainer } />
       <Route path="*" component={ PageNotFound } />
 

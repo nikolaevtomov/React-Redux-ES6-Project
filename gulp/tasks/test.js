@@ -36,8 +36,9 @@ gulp.task('test', () => {
   global.navigator.userAgent = 'jsdom';
   global.navigator.appVersion = '';
 
-  // Ensure that 'sinon' and 'chai' library methods will be
+  // Ensure that 'should', 'sinon' and 'chai' library methods will be
   // available to all tests
+  global.Should = require('should');
   global.sinon = require('sinon');
   global.expect = chai.expect;
 

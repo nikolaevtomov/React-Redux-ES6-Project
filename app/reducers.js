@@ -1,10 +1,12 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import sampleShowHide      from './modules/core/reducers/core_reducer';
+import app                 from './reducers';
+import visibility          from './reducers/sample_reducer';
 
 const rootReducer = combineReducers({
-  sampleShowHide
+  app,
+  visibility,
 });
 
 export default rootReducer;

@@ -10,4 +10,7 @@ const createStoreWithMiddleware = applyMiddleware(
   ReduxThunk
 )(createStore);
 
-export const Stores = createStoreWithMiddleware(reducers);
+export const Stores = createStoreWithMiddleware(
+  reducers,
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+);

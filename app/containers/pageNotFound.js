@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import DocumentTitle        from 'react-document-title';
 
-class PageNotFound extends Component {
+export class PageNotFound extends Component {
 
   constructor(props) {
     super(props);

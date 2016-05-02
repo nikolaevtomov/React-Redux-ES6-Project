@@ -1,10 +1,10 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { Link }             from 'react-router';
+import { Link }                   from 'react-router';
 import DocumentTitle        from 'react-document-title';
 
-class indexContainer extends Component {
+export class PageNotFound extends Component {
 
   constructor(props) {
     super(props);
@@ -12,13 +12,12 @@ class indexContainer extends Component {
 
   render() {
     return (
-      <DocumentTitle title="Home">
+      <DocumentTitle title="Home Page">
         <section className="home-page">
 
           <h3>Home Page</h3>
-
           <div>
-            <Link to="/sample">Sample</Link>
+            <Link to="/sample">Sample Page</Link>
           </div>
 
         </section>
@@ -28,4 +27,4 @@ class indexContainer extends Component {
 
 }
 
-export default indexContainer;
+export default PageNotFound;

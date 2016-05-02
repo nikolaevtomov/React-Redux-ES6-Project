@@ -1,25 +1,20 @@
 'use strict';
 
-import React, { Component } from 'react';
-
+import React                from 'react';
+import { connect }          from 'react-redux';
 import Header               from '../components/header';
 import Footer               from '../components/footer';
 
-class CoreContainer extends Component {
+export const CoreContainer = ({ children }) => {
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
     return (
       <div>
         <Header />
-          { this.props.children }
+        { children }
         <Footer />
       </div>
     );
-  }
-}
+
+};
 
 export default CoreContainer;
