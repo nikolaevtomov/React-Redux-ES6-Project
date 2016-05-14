@@ -1,6 +1,6 @@
 {
-  "name": "react-es6-startup",
-  "version": "0.0.1",
+  "name": "React Redux ES6 Project",
+  "version": "0.1.0",
   "author": "",
   "description": "Startup project with React, Redux, es6, Browserify, SASS, and Gulp.",
   "repository": {
@@ -8,12 +8,12 @@
     "url": ""
   },
   "keywords": [
-    "Gulp",
-    "Browserify",
     "React",
     "Redux",
-    "sass",
-    "es6"
+    "es6",
+    "Gulp",
+    "Browserify",
+    "sass"
   ],
   "private": true,
   "devDependencies": {

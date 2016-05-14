@@ -12,7 +12,7 @@ export class PageNotFound extends Component {
   render() {
     return (
       <DocumentTitle title="404: Not Found">
-        <section className="not-found-page">
+        <section className="page-not-found">
 
           <h3>Page Not Found</h3>
 

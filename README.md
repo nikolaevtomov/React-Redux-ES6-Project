@@ -1,4 +1,4 @@
-### React es6 Startup
+### React Redux ES6 Project
 
 #### Getting up and running
 

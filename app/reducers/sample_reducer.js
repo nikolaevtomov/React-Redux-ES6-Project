@@ -2,7 +2,6 @@
 
 import { SAMPLE_SHOW, SAMPLE_HIDE } from '../actions/index';
 
-
 export const initialState = {
   sampleShowHide: false,
 };

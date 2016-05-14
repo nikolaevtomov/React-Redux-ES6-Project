@@ -18,7 +18,7 @@ export const SampleContainer = ({ visible, dispatch }) => {
 
   return (
     <DocumentTitle title="Sample Page">
-      <section className="sample-page">
+      <section className="sample-container">
 
         <div>
           <h3 className={`sample ${(visible) ? 'active' : ''}`}>Semple Page</h3>
