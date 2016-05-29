@@ -14,7 +14,8 @@ gulp.task('sass', () => {
     .pipe(sass({
       sourceComments: global.isProd ? false : 'map',
       sourceMap: global.isProd ? false : 'sass',
-      outputStyle: global.isProd ? 'compressed' : 'nested'
+      outputStyle: global.isProd ? 'compressed' : 'nested',
+      includePaths: require('node-normalize-scss').includePaths
     }))
     .on('error', handleErrors)
     .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 8'))

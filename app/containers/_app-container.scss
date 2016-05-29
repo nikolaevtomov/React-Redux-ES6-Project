@@ -1,0 +1,37 @@
+
+$container: 'app-container';
+
+.#{$container} {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow-y: auto;
+
+  /* Custom, iPhone Retina */
+  @media only screen and (min-width : 20em) { // 320px
+
+  }
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (min-width : 30em) { // 480px
+
+  }
+
+  /* Small Devices, Tablets */
+  @media only screen and (min-width : 48em) { // 768px
+
+  }
+
+  /* Medium Devices, Desktops */
+  @media only screen and (min-width : 62em) { // 992px
+    max-width: 60.625em;                      // 970px
+    margin: 0 auto;
+  }
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width : 75em) { // 1200px
+    max-width: 73.125em;                      // 1170px
+  }
+
+}

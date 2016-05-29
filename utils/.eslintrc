@@ -6,6 +6,7 @@
   "globals": {
     "sinon": true,
     "sandbox": true,
-    "Should": true
+    "Should": true,
+    "chai": true
   }
 }

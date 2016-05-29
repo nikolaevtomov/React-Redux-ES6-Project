@@ -4,40 +4,36 @@ import React, { Component }       from 'react';
 import { connect }                from 'react-redux';
 import { Link }                   from 'react-router';
 import DocumentTitle              from 'react-document-title';
-import { sampleShow, sampleHide } from '../actions/index';
+import { toggleVisibility }       from '../actions';
 
-export const SampleContainer = ({ visible, dispatch }) => {
+export class SampleContainer extends Component {
 
-  const handleActivate = () => {
-    dispatch(sampleShow());
+  handleToggle() {
+    this.props.toggle();
   }
 
-  const handleDeactivate = () => {
-    dispatch(sampleHide());
-  }
-
-  return (
-    <DocumentTitle title="Sample Page">
-      <section className="sample-container">
-
-        <div>
-          <h3 className={`sample ${(visible) ? 'active' : ''}`}>Semple Page</h3>
-          <button type="button" onClick={ handleActivate }>Activate</button>
-          <button type="button" onClick={ handleDeactivate }>Deactivate</button>
-        </div>
-
-        <div>
-          <Link to="/">Back to Home</Link>
-        </div>
-
-      </section>
-    </DocumentTitle>
-  );
-
-}
-
-export default connect((state) => {
-  return {
-    visible: state.visibility.sampleShowHide
+  render() {
+    return (
+      <DocumentTitle title={`Sample Page`}>
+        <section className={`container sample-container`}>
+          <div>
+            <h3 className={`sample ${(this.props.visibility) ? 'active' : ''}`}>Semple Page</h3>
+            <button type="button" onClick={ this.handleToggle.bind(this) }>Toggle Visibility</button>
+          </div>
+          <div>
+            <Link to="/">Back to Home</Link>
+          </div>
+        </section>
+      </DocumentTitle>
+    );
   };
-})(SampleContainer);
+  }
+
+export default connect(
+  (state) => ({
+    visibility: state.ui.visibility
+  }),
+  {
+    toggle: toggleVisibility
+  }
+)(SampleContainer);

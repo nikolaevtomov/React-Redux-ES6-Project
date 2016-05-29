@@ -1,12 +1,14 @@
 'use strict';
 
-import { combineReducers } from 'redux';
-import app                 from './reducers';
-import visibility          from './reducers/sample_reducer';
+import { combineReducers }      from 'redux';
+import { routerReducer }        from 'react-router-redux'
+import app                      from './reducers/app';
+import ui                       from './reducers/ui';
 
 const rootReducer = combineReducers({
   app,
-  visibility,
+  ui,
+  routing: routerReducer
 });
 
 export default rootReducer;

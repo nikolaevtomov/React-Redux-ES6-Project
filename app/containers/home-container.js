@@ -12,19 +12,16 @@ export class HomeContainer extends Component {
 
   render() {
     return (
-      <DocumentTitle title="Home Page">
-        <section className="home-container">
-
+      <DocumentTitle title={`Home Page`}>
+        <section className={`container home-container`}>
           <h3>Home Page</h3>
           <div>
             <Link to="/sample">Sample Page</Link>
           </div>
-
         </section>
       </DocumentTitle>
     );
   }
-
-}
+};
 
 export default HomeContainer;

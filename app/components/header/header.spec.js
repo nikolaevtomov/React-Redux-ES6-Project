@@ -2,11 +2,11 @@
 
 import React            from 'react';
 import TestUtils        from 'react-addons-test-utils';
-import Footer           from './footer';
+import Header           from './index';
 
 function testRenderer() {
   const renderer = TestUtils.createRenderer();
-  renderer.render(<Footer />);
+  renderer.render(<Header />);
   const output = renderer.getRenderOutput();
 
   return {
@@ -15,12 +15,12 @@ function testRenderer() {
   };
 }
 
-describe('Component: Footer', () => {
+describe('Component: Header', () => {
 
   it('should render properly', () => {
 
     const { output } = testRenderer();
-    expect(output.type).to.equal('footer');
+    expect(output.type).to.equal('header');
 
   });
 

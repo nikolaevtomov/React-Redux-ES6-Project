@@ -10,10 +10,9 @@ class Header extends Component {
 
   render() {
     return (
-      <header> Header </header>
+      <header className={`header`}>Header</header>
     );
   }
-
-}
+};
 
 export default Header;
