@@ -6,6 +6,9 @@ import { Provider } from 'react-redux';
 import Routes       from './routes';
 import { Stores }   from './stores';
 
+import { fetchPosts }                   from './reducers/posts';
+Stores.dispatch(fetchPosts());
+
 render(
   <Provider store={ Stores }>
     <Routes />
