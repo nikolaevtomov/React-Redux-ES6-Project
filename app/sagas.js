@@ -1,11 +1,7 @@
 import { takeLatest, takeEvery }        from 'redux-saga';
 import { apply, call, fork, put, take } from 'redux-saga/effects';
 
-import { request }                      from './services/api';
-
-const ROOT_URL = 'http://reduxblog.herokuapp.com/api';
-const API_KEY = '?key=nikolaev';
-const path = `${ROOT_URL}/posts${API_KEY}`;
+import { getPosts }                     from './services/api';
 
 import {
   APP_LOADING_STARTED,
@@ -17,17 +13,15 @@ import {
 export function* initializeAppState() {
   try {
 
-    // const results = yield Promise.all([
-    //   request(path),
-    //   request(path)
-    // ]);
-    //
-    // const [ posts, posts2 ] = results;
+    const [ posts, posts2 ] = yield Promise.all([
+      getPosts(),
+      getPosts()
+    ]);
 
-    const [ posts, posts2 ]  = yield [
-      call(request, path),
-      call(request, path)
-    ]
+    // const [ posts, posts2 ]  = yield [
+    //   call(request, path),
+    //   call(request, path)
+    // ]
 
     yield put(fetchPostsSucceed(posts.data));
     yield put(fetchPostsSucceed(posts2.data));
