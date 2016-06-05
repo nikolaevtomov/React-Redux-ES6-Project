@@ -4,16 +4,20 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware                      from 'redux-saga';
 import ReduxPromise                              from 'redux-promise';
 import ReduxThunk                                from 'redux-thunk';
-import reducers                                  from './reducers';
-import * as sagas                                from './sagas';
+import Sagas                                     from './sagas';
+import Reducers                                  from './reducers';
+
+const SagaMiddleware = createSagaMiddleware();
 
 export const Stores = createStore(
-  reducers,
+  Reducers,
   compose(
     applyMiddleware(
       ReduxPromise,
       ReduxThunk,
-      createSagaMiddleware(...sagas)
+      SagaMiddleware
     ),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 ));
+
+SagaMiddleware.run(Sagas);

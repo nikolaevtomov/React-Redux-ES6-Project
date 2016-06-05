@@ -11,11 +11,19 @@ export class AppContainer extends Component {
     super(props);
   }
 
+  loadingScreen() {
+    return(
+      <div className={'loading'}> ...loading </div>
+    );
+  }
+
+  renderContent = () => ((this.props.loading) ? this.loadingScreen() : this.props.children);
+
   render() {
     return (
       <div className={`app-container`}>
         <Header />
-        { this.props.children }
+        { this.renderContent() }
         <Footer />
       </div>
     );
@@ -23,4 +31,6 @@ export class AppContainer extends Component {
 
 };
 
-export default AppContainer;
+export default connect((state) => ({
+  loading: state.app.loading
+}))(AppContainer);

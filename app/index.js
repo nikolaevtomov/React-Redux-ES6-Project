@@ -5,9 +5,9 @@ import { render }   from 'react-dom';
 import { Provider } from 'react-redux';
 import Routes       from './routes';
 import { Stores }   from './stores';
+import { appLoadingStarted } from './actions';
 
-import { fetchPosts }                   from './reducers/posts';
-Stores.dispatch(fetchPosts());
+Stores.dispatch(appLoadingStarted());
 
 render(
   <Provider store={ Stores }>

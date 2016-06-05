@@ -1,33 +1,24 @@
 'use strict';
 
-import axios from 'axios';
+import { FETCH_POSTS_SUCCEED } from '../actions';
 
-import {
-  FETCH_POSTS
-} from '../actions';
-
-const ROOT_URL = 'http://reduxblog.herokuapp.com/api';
-const API_KEY = '?key=nikolaev';
-
-export function fetchPosts() {
-  const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
-
-  return {
-    type: FETCH_POSTS,
-    payload: request
-  };
+export const loadUserDate = (user) => {
+  return user;
 }
 
-const initialState = { all: [], post: null };
+const initialState = {};
 
-export default function(state = initialState, action) {
+export default function(state = initialState, { type, value }) {
 
-  switch(action.type) {
+  switch(type) {
 
-  case FETCH_POSTS:
-    return { ...state, all: action.payload.data };
+  case FETCH_POSTS_SUCCEED:
+    return {
+      ...state,
+      ...loadUserDate(value),
+    };
 
   default:
     return state;
   }
-}
+};

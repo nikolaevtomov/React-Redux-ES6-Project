@@ -14,4 +14,4 @@ export default (state = initialState, { type, value }) => {
     default:
       return state;
   }
-}
+};

@@ -1,8 +1,8 @@
 'use strict';
 
-import { APP_LOADING, APP_LOADED } from '../actions';
+import { APP_LOADING, APP_LOADING_SUCCEED, APP_LOADING_FAILED } from '../actions';
 
-export const getInitialState = () => {
+export const setInitialState = () => {
   let state = {};
 
   return {
@@ -11,7 +11,7 @@ export const getInitialState = () => {
   };
 };
 
-export const initialState = getInitialState();
+export const initialState = setInitialState();
 
 export default function(state = initialState, { type }) {
 
@@ -20,11 +20,13 @@ export default function(state = initialState, { type }) {
   case APP_LOADING:
     return { ...state, loading: true };
 
-  case APP_LOADED:
+  case APP_LOADING_SUCCEED:
     return { ...state, loading: false };
+
+  case APP_LOADING_FAILED:
+    return state;
 
   default:
     return state;
-
   }
 };
