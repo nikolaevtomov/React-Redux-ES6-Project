@@ -1,5 +1,5 @@
 {
-  "name": "React Redux ES6 Project",
+  "name": "react-redux-es6-project",
   "version": "0.1.1",
   "author": "",
   "description": "Startup project with React, Redux, es6, Browserify, SASS, and Gulp.",
@@ -17,7 +17,7 @@
   ],
   "private": true,
   "devDependencies": {
-    "babel-core": "^6.7.2",
+    "babel-core": "^6.9.1",
     "babel-eslint": "^6.0.4",
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-polyfill": "^6.9.1",
