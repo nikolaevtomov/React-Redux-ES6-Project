@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { connect }          from 'react-redux';
+import Loading              from '../components/loading';
 import Header               from '../components/header';
 import Footer               from '../components/footer';
 
@@ -11,13 +12,7 @@ export class AppContainer extends Component {
     super(props);
   }
 
-  loadingScreen() {
-    return(
-      <div className={'loading'}> ...loading </div>
-    );
-  }
-
-  renderContent = () => ((this.props.loading) ? this.loadingScreen() : this.props.children);
+  renderContent = () => ((this.props.loading) ? <Loading /> : this.props.children);
 
   render() {
     return (

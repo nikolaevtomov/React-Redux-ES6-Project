@@ -6,7 +6,7 @@ $container: 'app-container';
   position: relative;
   flex-direction: column;
   flex: 1 1 auto;
-  overflow-y: auto;
+  // overflow-y: auto;
 
   /* Custom, iPhone Retina */
   @media only screen and (min-width : 20em) { // 320px
