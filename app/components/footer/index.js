@@ -1,8 +1,9 @@
 'use strict';
 
 import React from 'react';
+import { connect } from 'react-redux';
 
-const Footer = () => {
+const Footer = ({ }) => {
 
   return (
     <footer className={`footer`}>Footer</footer>
@@ -10,4 +11,6 @@ const Footer = () => {
 
 };
 
-export default Footer;
+export default connect((state) => ({
+
+}))(Footer);

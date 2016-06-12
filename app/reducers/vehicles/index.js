@@ -1,9 +1,9 @@
 'use strict';
 
-import { FETCH_POSTS_SUCCEED } from '../actions';
+import { FETCH_VEHICLES_SUCCEED } from '../../actions';
 
-export const loadUserDate = (user) => {
-  return user;
+export const loadVehiclesDate = (value) => {
+  return value;
 }
 
 const initialState = {};
@@ -12,10 +12,10 @@ export default function(state = initialState, { type, value }) {
 
   switch(type) {
 
-  case FETCH_POSTS_SUCCEED:
+  case FETCH_VEHICLES_SUCCEED:
     return {
       ...state,
-      ...loadUserDate(value),
+      ...loadVehiclesDate(value)
     };
 
   default:

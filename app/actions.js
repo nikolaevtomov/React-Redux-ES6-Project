@@ -17,5 +17,20 @@ export const appLoadingSucceed = typeValueAction(APP_LOADING_SUCCEED);
 export const TOGGLE_VISIBILITY = 'TOGGLE_VISIBILITY';
 export const toggleVisibility = typeValueAction(TOGGLE_VISIBILITY);
 
-export const FETCH_POSTS_SUCCEED = 'FETCH_POSTS_SUCCEED';
-export const fetchPostsSucceed = typeValueAction(FETCH_POSTS_SUCCEED);
+export const FETCH_PEOPLE_SUCCEED = 'FETCH_PEOPLE_SUCCEED';
+export const fetchPeopleSucceed = typeValueAction(FETCH_PEOPLE_SUCCEED);
+
+export const FETCH_PLANETS_SUCCEED = 'FETCH_PLANETS_SUCCEED';
+export const fetchPlanetsSucceed = typeValueAction(FETCH_PLANETS_SUCCEED);
+
+export const FETCH_FILMS_SUCCEED = 'FETCH_FILMS_SUCCEED';
+export const fetchFilmsSucceed = typeValueAction(FETCH_FILMS_SUCCEED);
+
+export const FETCH_SPECIES_SUCCEED = 'FETCH_SPECIES_SUCCEED';
+export const fetchSpeciesSucceed = typeValueAction(FETCH_SPECIES_SUCCEED);
+
+export const FETCH_VEHICLES_SUCCEED = 'FETCH_VEHICLES_SUCCEED';
+export const fetchVehiclesSucceed = typeValueAction(FETCH_VEHICLES_SUCCEED);
+
+export const FETCH_STARSHIPS_SUCCEED = 'FETCH_STARSHIPS_SUCCEED';
+export const fetchStarshipsSucceed = typeValueAction(FETCH_STARSHIPS_SUCCEED);

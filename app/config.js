@@ -1,9 +1,15 @@
 'use strict';
 
 export const config = {
-  api: 'http://reduxblog.herokuapp.com/api',
-  path: '/posts',
-  key: '?key=nikolaev'
+  api: 'http://swapi.co/api',
+  path: {
+    people: '/people/',
+    planets: '/planets/',
+    films: '/films/',
+    species: '/species/',
+    vehicles: '/vehicles/',
+    starships: '/starships/'
+  }
 }
 
 export default config;

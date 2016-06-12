@@ -1,30 +1,45 @@
 import { takeLatest, takeEvery }        from 'redux-saga';
 import { apply, call, fork, put, take } from 'redux-saga/effects';
 
-import { getPosts }                     from './services/api';
+import {
+  getPeople,
+  getPlanets,
+  getFilms,
+  getSpecies,
+  getVehicles,
+  getStarships
+} from './services/api';
 
 import {
   APP_LOADING_STARTED,
   appLoadingFailed,
   appLoadingSucceed,
-  fetchPostsSucceed
+  fetchPeopleSucceed,
+  fetchPlanetsSucceed,
+  fetchFilmsSucceed,
+  fetchSpeciesSucceed,
+  fetchVehiclesSucceed,
+  fetchStarshipsSucceed
 } from './actions';
 
 export function* initializeAppState() {
   try {
 
-    const [ posts, posts2 ] = yield Promise.all([
-      getPosts(),
-      getPosts()
+    const [ people, planets, films, species, vehicles, starships ] = yield Promise.all([
+      getPeople(),
+      getPlanets(),
+      getFilms(),
+      getSpecies(),
+      getVehicles(),
+      getStarships()
     ]);
 
-    // const [ posts, posts2 ]  = yield [
-    //   call(request, path),
-    //   call(request, path)
-    // ]
-
-    yield put(fetchPostsSucceed(posts.data));
-    yield put(fetchPostsSucceed(posts2.data));
+    yield put(fetchPeopleSucceed(people));
+    yield put(fetchPlanetsSucceed(planets));
+    yield put(fetchFilmsSucceed(films));
+    yield put(fetchSpeciesSucceed(species));
+    yield put(fetchVehiclesSucceed(vehicles));
+    yield put(fetchStarshipsSucceed(starships));
     yield put(appLoadingSucceed());
 
   } catch (error) {
