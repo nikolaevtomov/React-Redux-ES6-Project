@@ -17,3 +17,11 @@
 - [Gulp](http://gulpjs.com/)
 - [Browserify](http://browserify.org/)
 - [Mocha](https://github.com/mochajs/mocha)
+
+- dependencies
+
+axios install normalize.css npm react react-addons-css-transition-group react-document-title react-dom react-redux react-router react-router-redux react-toolbox redux redux-promise redux-saga redux-thunk
+
+- devDependencies
+
+babel-core babel-eslint babel-plugin-transform-runtime babel-polyfill babel-preset-es2015 babel-preset-react babel-preset-react-optimize babel-preset-stage-0 babel-preset-stage-1 babelify browser-sync browserify chai debowerify del eslint-plugin-react gulp gulp-autoprefixer gulp-eslint gulp-if gulp-imagemin gulp-jsx-coverage gulp-mocha gulp-notify gulp-rename gulp-sass gulp-sourcemaps gulp-streamify gulp-uglify gulp-util istanbul jsdom lodash mocha react-addons-test-utils run-sequence should sinon sinon-chai superagent vinyl-source-stream watchify when yargs
