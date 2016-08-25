@@ -10,6 +10,6 @@ export const config = {
     vehicles: '/vehicles/',
     starships: '/starships/'
   }
-}
+};
 
 export default config;

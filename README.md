@@ -20,7 +20,7 @@
 
 - dependencies
 
-axios install normalize.css npm react react-addons-css-transition-group react-document-title react-dom react-redux react-router react-router-redux react-toolbox redux redux-promise redux-saga redux-thunk
+install normalize.css npm react react-addons-css-transition-group react-document-title react-dom react-redux react-router react-router-redux react-toolbox redux redux-promise redux-saga redux-thunk
 
 - devDependencies
 

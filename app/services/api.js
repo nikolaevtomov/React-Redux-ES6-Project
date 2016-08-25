@@ -1,45 +1,46 @@
 'use strict';
 
-import axios   from 'axios';
 import config  from '../config';
 
-// get request with axios
-export function request(path) {
-  return axios.get(path)
+const defaultHeader = {
+  'method': 'GET',
+  'Content-Type': 'application/json'
+};
+
+export function request(path, header = defaultHeader) {
+  return fetch(`${config.api}${path}`, header)
     .then((response) => {
-      return response.data;
+      return response.json();
     })
-    .catch((response) => {
-      console.log('AXIOS ERROR: ' + response);
+    .catch( error => {
+      console.log(error);
     });
 }
 
 export function getPeople() {
-  const url = `${config.api}${config.path.people}`;
-  return request(url);
+  const header = {
+    // 'method': 'GET',
+    // 'Content-Type': 'application/json'
+  };
+  return request(config.path.people, header);
 }
 
 export function getPlanets() {
-  const url = `${config.api}${config.path.planets}`;
-  return request(url);
+  return request(config.path.planets);
 }
 
 export function getFilms() {
-  const url = `${config.api}${config.path.films}`;
-  return request(url);
+  return request(config.path.films);
 }
 
 export function getSpecies() {
-  const url = `${config.api}${config.path.species}`;
-  return request(url);
+  return request(config.path.species);
 }
 
 export function getVehicles() {
-  const url = `${config.api}${config.path.vehicles}`;
-  return request(url);
+  return request(config.path.vehicles);
 }
 
 export function getStarships() {
-  const url = `${config.api}${config.path.starships}`;
-  return request(url);
+  return request(config.path.starships);
 }

@@ -43,7 +43,7 @@ export function* initializeAppState() {
     yield put(appLoadingSucceed());
 
   } catch (error) {
-    console.log('PROMISE: ' + error)
+    console.log(error);
     yield put(appLoadingFailed());
   }
 }
@@ -53,5 +53,5 @@ export function* watchInitializeAppState() {
 }
 
 export default function* startForeman() {
-  yield fork(watchInitializeAppState)
+  yield fork(watchInitializeAppState);
 }
