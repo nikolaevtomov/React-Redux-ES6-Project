@@ -3,6 +3,8 @@
 import React, { Component } from 'react';
 import { Link }             from 'react-router';
 import DocumentTitle        from 'react-document-title';
+import { connect }          from 'react-redux';
+import { getCharacters }    from '../selectors';
 
 export class HomeContainer extends Component {
 
@@ -15,6 +17,15 @@ export class HomeContainer extends Component {
       <DocumentTitle title={`Home Page`}>
         <section className={`container home-container`}>
           <h3>Home Page</h3>
+
+          <ul className={''}>
+            {
+              this.props.characters
+              .map(character =>
+                <li className={''}>{ character.name }</li>)
+            }
+          </ul>
+
           <div>
             <Link to="/sample">Sample Page</Link>
           </div>
@@ -24,4 +35,8 @@ export class HomeContainer extends Component {
   }
 };
 
-export default HomeContainer;
+export default connect(
+  (state) => ({
+    characters: getCharacters(state)
+  })
+)(HomeContainer);

@@ -27,5 +27,5 @@ export class AppContainer extends Component {
 };
 
 export default connect((state) => ({
-  loading: state.app.loading
+  loading: state.ui.app.loading
 }))(AppContainer);

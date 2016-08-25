@@ -1,6 +1,6 @@
 'use strict';
 
-import { APP_LOADING, APP_LOADING_SUCCEED, APP_LOADING_FAILED } from '../actions';
+import { APP_LOADING, APP_LOADING_SUCCEED, APP_LOADING_FAILED } from '../../actions';
 
 export const setInitialState = () => {
   let state = {};

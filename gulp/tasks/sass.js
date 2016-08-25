@@ -15,7 +15,8 @@ gulp.task('sass', () => {
     .pipe(sass({
       sourceComments: global.isProd ? false : 'map',
       outputStyle: global.isProd ? 'compressed' : 'nested',
-      includePaths: ['node_modules/normalize.css']
+      includePaths: require('node-bourbon').with('node_modules/normalize.css')
+      // includePaths: ['node_modules/normalize.css']
     }))
     .on('error', handleErrors)
     .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 8'))

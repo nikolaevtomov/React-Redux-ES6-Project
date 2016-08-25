@@ -34,12 +34,12 @@ export function* initializeAppState() {
       getStarships()
     ]);
 
-    yield put(fetchPeopleSucceed(people));
-    yield put(fetchPlanetsSucceed(planets));
-    yield put(fetchFilmsSucceed(films));
-    yield put(fetchSpeciesSucceed(species));
-    yield put(fetchVehiclesSucceed(vehicles));
-    yield put(fetchStarshipsSucceed(starships));
+    yield put(fetchPeopleSucceed(people.results));
+    yield put(fetchPlanetsSucceed(planets.results));
+    yield put(fetchFilmsSucceed(films.results));
+    yield put(fetchSpeciesSucceed(species.results));
+    yield put(fetchVehiclesSucceed(vehicles.results));
+    yield put(fetchStarshipsSucceed(starships.results));
     yield put(appLoadingSucceed());
 
   } catch (error) {
