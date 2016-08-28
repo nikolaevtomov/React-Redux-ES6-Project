@@ -1,0 +1,11 @@
+
+$component: 'button';
+
+.#{$component} {
+  width: rem(90);
+  height: rem(40);
+  color: $brand-13;
+  background-color: $brand-12;
+  font-size: rem(14);
+  border: 0 none;
+}

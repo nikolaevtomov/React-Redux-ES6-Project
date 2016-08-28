@@ -1,0 +1,22 @@
+
+$component: 'fieldset';
+
+.#{$component} {
+
+  &__label {
+    width: 100%;
+    float: left;
+    margin-bottom: rem(8);
+    color: $brand-12;
+    font-size: rem(14);
+  }
+  &__input {
+    width: 100%;
+    height: rem(40);
+    margin-bottom: rem(8);
+    padding-left: rem(10); 
+    color: $brand-12;
+    font-size: rem(14);
+    border: 1px solid $brand-13;
+  }
+}

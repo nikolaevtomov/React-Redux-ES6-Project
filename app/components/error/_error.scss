@@ -1,0 +1,8 @@
+
+$component: 'errorMsg';
+
+.#{$component} {
+  font-size: rem(12);
+  font-style: italic;
+  color: $brand-20;
+}
