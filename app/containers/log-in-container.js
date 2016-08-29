@@ -6,6 +6,7 @@ import { reduxForm, reset } from 'redux-form';
 import ButtonComponent      from '../components/button';
 import { InputComponent }   from '../components/input';
 import { Error }            from '../components/error';
+import { startLogin }       from '../actions'
 
 export const LogInContainer = props => {
 
@@ -13,15 +14,17 @@ export const LogInContainer = props => {
   const { email, password } = fields;
 
   const handleOnSubmit = () => {
-    console.log(email, password)
+    submit({
+      email: email.value,
+      password: password.value
+    });
+    // console.log('enter');
   };
 
   const buttonItems = {
     name: 'Login',
     type: 'submit',
-    onClickAction: () => {
-      handleOnSubmit();
-    }
+    onClickAction: () => {}
   };
 
   return(
@@ -76,7 +79,7 @@ export const ConnectedLogInContainer = connect(
 
   }),
   {
-    // submit: triggerSubmitAction,
+    submit: startLogin,
   }
 )(LogInContainer);
 
@@ -85,10 +88,11 @@ export default reduxForm(
     form: 'LogInContainer',
     fields: ['email', 'password'],
     validate,
-  },
-  (state) => ({
-    // initialValues: {
-    //
-    // },
-  })
+  }
+  // ,
+  // (state) => ({
+  //   initialValues: {
+  //
+  //   },
+  // })
 )(ConnectedLogInContainer);

@@ -9,6 +9,7 @@ import films                      from './reducers/films';
 import species                    from './reducers/species';
 import vehicles                   from './reducers/vehicles';
 import starships                  from './reducers/starships';
+import auth                       from './reducers/auth';
 import ui                         from './reducers/ui';
 
 const rootReducer = combineReducers({
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   species,
   vehicles,
   starships,
+  auth,
   ui,
   form: formReducer
 });

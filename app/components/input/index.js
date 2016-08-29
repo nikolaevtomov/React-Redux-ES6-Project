@@ -5,7 +5,7 @@ import { getInputProps } from '../../utils';
 
 export const InputComponent = props => {
 
-  const { label, field, type } = props;
+  const { placeholder, label, field, type } = props;
 
   return(
       <fieldset className={'fieldset'}>
@@ -13,6 +13,7 @@ export const InputComponent = props => {
         <input
           className={`fieldset__input ${(field.touched && field.error) ? 'error' : ''}`}
           type={type}
+          placeholder={placeholder}
           {...getInputProps(field)} />
       </fieldset>
   );

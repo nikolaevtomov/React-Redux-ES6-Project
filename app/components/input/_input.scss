@@ -14,9 +14,13 @@ $component: 'fieldset';
     width: 100%;
     height: rem(40);
     margin-bottom: rem(8);
-    padding-left: rem(10); 
+    padding-left: rem(10);
     color: $brand-12;
     font-size: rem(14);
     border: 1px solid $brand-13;
+
+    &.error {
+      border: 1px solid $brand-20;
+    }
   }
 }

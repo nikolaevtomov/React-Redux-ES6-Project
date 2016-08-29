@@ -34,3 +34,6 @@ export const fetchVehiclesSucceed = typeValueAction(FETCH_VEHICLES_SUCCEED);
 
 export const FETCH_STARSHIPS_SUCCEED = 'FETCH_STARSHIPS_SUCCEED';
 export const fetchStarshipsSucceed = typeValueAction(FETCH_STARSHIPS_SUCCEED);
+
+export const START_LOGIN = 'START_LOGIN';
+export const startLogin = typeValueAction(START_LOGIN);

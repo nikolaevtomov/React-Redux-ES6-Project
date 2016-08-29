@@ -17,7 +17,8 @@ export const Stores = createStore(
       ReduxThunk,
       SagaMiddleware
     ),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
-));
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
+);
 
 SagaMiddleware.run(Sagas);
