@@ -2,7 +2,6 @@
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware                      from 'redux-saga';
-import ReduxPromise                              from 'redux-promise';
 import ReduxThunk                                from 'redux-thunk';
 import Sagas                                     from './sagas';
 import Reducers                                  from './reducers';
@@ -13,8 +12,7 @@ export const Stores = createStore(
   Reducers,
   compose(
     applyMiddleware(
-      ReduxPromise,
-      ReduxThunk,
+      // ReduxThunk,
       SagaMiddleware
     ),
     window.devToolsExtension ? window.devToolsExtension() : f => f
