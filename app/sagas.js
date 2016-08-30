@@ -1,7 +1,8 @@
 import { takeLatest, takeEvery }        from 'redux-saga';
-import { apply, call, fork, put, take } from 'redux-saga/effects';
+import { apply, call, fork, put, take, select } from 'redux-saga/effects';
 
 import {
+  userFunction,
   getPeople,
   getPlanets,
   getFilms,
@@ -12,6 +13,7 @@ import {
 
 import {
   APP_LOADING_STARTED,
+  START_LOGIN,
   appLoadingFailed,
   appLoadingSucceed,
   fetchPeopleSucceed,
@@ -48,10 +50,32 @@ export function* initializeAppState() {
   }
 }
 
+export function* initializeUserLogin() {
+  try {
+
+    const user = yield select((state) => (state.entities.user.info));
+
+    const result = yield call(userFunction, {
+      email: user.email,
+      password: user.password,
+    });
+
+    // yield put(fetchPeopleSucceed(people.results));
+
+  } catch (error) {
+    console.log(error);
+    // yield put(appLoadingFailed());
+  }
+}
+
 export function* watchInitializeAppState() {
   yield* takeLatest(APP_LOADING_STARTED, initializeAppState);
+}
+export function* watchUserLogin() {
+  yield* takeLatest(START_LOGIN, initializeUserLogin);
 }
 
 export default function* startForeman() {
   yield fork(watchInitializeAppState);
+  yield fork(watchUserLogin);
 }

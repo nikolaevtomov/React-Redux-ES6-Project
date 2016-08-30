@@ -1,10 +1,10 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import login               from './login';
+import authenticated       from './authenticated';
 
 const authReducer = combineReducers({
-  login
+  authenticated
 });
 
 export default authReducer;

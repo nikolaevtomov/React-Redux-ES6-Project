@@ -2,6 +2,27 @@
 
 import config  from '../config';
 
+export const ROOT_URL = 'http://localhost:3090';
+
+export function userFunction(value) {
+  // console.log('userFunction()', value);
+
+    fetch(`${ROOT_URL}/signin`, {
+      'method': 'POST',
+      'Content-Type': 'application/json',
+      'body': JSON.stringify(value)
+    })
+    .then((response) => {
+      return response.json();
+      console.log(response);
+    })
+    .catch( error => {
+      console.log(error);
+      console.log('catch error');
+    })
+
+}
+
 const defaultHeader = {
   'method': 'GET',
   'Content-Type': 'application/json'
