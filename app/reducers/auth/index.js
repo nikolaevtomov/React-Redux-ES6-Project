@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 import authenticated       from './authenticated';
 
 const authReducer = combineReducers({
-  authenticated
+  authenticated,
 });
 
 export default authReducer;

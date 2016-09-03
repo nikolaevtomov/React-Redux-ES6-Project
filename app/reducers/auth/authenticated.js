@@ -1,6 +1,9 @@
 'use strict';
 
-import { START_LOGIN, START_LOGOUT } from '../../actions';
+import {
+  LOGIN_SUBMIT_SUCCESS,
+  LOGIN_SUBMIT_FAILED
+} from '../../actions';
 
 export const initialState = false;
 
@@ -8,11 +11,11 @@ export default (state = initialState, { type, value }) => {
 
   switch (type) {
 
-    case START_LOGIN:
+    case LOGIN_SUBMIT_SUCCESS:
       return true;
 
-    case START_LOGOUT:
-      return false;
+    case LOGIN_SUBMIT_FAILED:
+      return initialState;
 
     default:
       return state;

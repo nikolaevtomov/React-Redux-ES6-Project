@@ -27,6 +27,9 @@ export class HomeContainer extends Component {
           </ul>
 
           <div>
+            <Link to="/login">Login Page</Link>
+          </div>
+          <div>
             <Link to="/sample">Sample Page</Link>
           </div>
         </section>

@@ -4,23 +4,15 @@ import config  from '../config';
 
 export const ROOT_URL = 'http://localhost:3090';
 
-export function userFunction(value) {
-  // console.log('userFunction()', value);
+export function fetchPostLogin(value) {
 
-    fetch(`${ROOT_URL}/signin`, {
-      'method': 'POST',
+    return fetch(`${ROOT_URL}/login`, {
+      method: 'POST',
       'Content-Type': 'application/json',
-      'body': JSON.stringify(value)
+      body: JSON.stringify(value),
     })
-    .then((response) => {
-      return response.json();
-      console.log(response);
-    })
-    .catch( error => {
-      console.log(error);
-      console.log('catch error');
-    })
-
+    .then(response => response.json())
+    .catch(error => console.log(error))
 }
 
 const defaultHeader = {
@@ -33,7 +25,7 @@ export function request(path, header = defaultHeader) {
     .then((response) => {
       return response.json();
     })
-    .catch( error => {
+    .catch(error => {
       console.log(error);
     });
 }

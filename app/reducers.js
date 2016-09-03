@@ -10,6 +10,7 @@ import species                    from './reducers/species';
 import vehicles                   from './reducers/vehicles';
 import starships                  from './reducers/starships';
 import auth                       from './reducers/auth';
+import user                       from './reducers/user';
 import ui                         from './reducers/ui';
 
 const rootReducer = combineReducers({
@@ -21,8 +22,9 @@ const rootReducer = combineReducers({
   vehicles,
   starships,
   auth,
+  user,
   ui,
-  form: formReducer
+  form: formReducer,
 });
 
 export default rootReducer;

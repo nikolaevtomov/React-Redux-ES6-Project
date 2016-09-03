@@ -1,19 +1,17 @@
-import { takeLatest, takeEvery }        from 'redux-saga';
-import { apply, call, fork, put, take, select } from 'redux-saga/effects';
+import { takeLatest }        from 'redux-saga';
+import { fork, put, take } from 'redux-saga/effects';
 
 import {
-  userFunction,
   getPeople,
   getPlanets,
   getFilms,
   getSpecies,
   getVehicles,
   getStarships
-} from './services/api';
+} from '../services/api';
 
 import {
   APP_LOADING_STARTED,
-  START_LOGIN,
   appLoadingFailed,
   appLoadingSucceed,
   fetchPeopleSucceed,
@@ -22,7 +20,9 @@ import {
   fetchSpeciesSucceed,
   fetchVehiclesSucceed,
   fetchStarshipsSucceed
-} from './actions';
+} from '../actions';
+
+import watchUserLogin from './auth/login';
 
 export function* initializeAppState() {
   try {
@@ -33,7 +33,7 @@ export function* initializeAppState() {
       getFilms(),
       getSpecies(),
       getVehicles(),
-      getStarships()
+      getStarships(),
     ]);
 
     yield put(fetchPeopleSucceed(people.results));
@@ -50,29 +50,8 @@ export function* initializeAppState() {
   }
 }
 
-export function* initializeUserLogin() {
-  try {
-
-    const user = yield select((state) => (state.entities.user.info));
-
-    const result = yield call(userFunction, {
-      email: user.email,
-      password: user.password,
-    });
-
-    // yield put(fetchPeopleSucceed(people.results));
-
-  } catch (error) {
-    console.log(error);
-    // yield put(appLoadingFailed());
-  }
-}
-
 export function* watchInitializeAppState() {
   yield* takeLatest(APP_LOADING_STARTED, initializeAppState);
-}
-export function* watchUserLogin() {
-  yield* takeLatest(START_LOGIN, initializeUserLogin);
 }
 
 export default function* startForeman() {

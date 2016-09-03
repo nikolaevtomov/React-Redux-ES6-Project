@@ -6,17 +6,17 @@ import { reduxForm, reset } from 'redux-form';
 import ButtonComponent      from '../components/button';
 import { InputComponent }   from '../components/input';
 import { Error }            from '../components/error';
-import { startLogin }       from '../actions'
+import { loginSubmitBegin } from '../actions';
 
 export const LogInContainer = props => {
 
-  const { fields, submit, handleSubmit } = props;
+  const { fields, loginSubmit, handleSubmit } = props;
   const { email, password } = fields;
 
   const handleOnSubmit = () => {
-    submit({
+    loginSubmit({
       email: email.value,
-      password: password.value
+      password: password.value,
     });
     // console.log('enter');
   };
@@ -79,13 +79,13 @@ export const ConnectedLogInContainer = connect(
 
   }),
   {
-    submit: startLogin,
+    loginSubmit: loginSubmitBegin,
   }
 )(LogInContainer);
 
 export default reduxForm(
   {
-    form: 'LogInContainer',
+    form: 'Log-In-Form',
     fields: ['email', 'password'],
     validate,
   }
