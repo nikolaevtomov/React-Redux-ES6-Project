@@ -21,19 +21,17 @@ export default function* watchUserLogin() {
       });
 
       if(!response.error) {
-        // TODO: add response to success
-        yield put(loginSubmitSuccess(/*response*/));
+        console.log(response);
+        yield put(loginSubmitSuccess(response));
         yield put(push('/'));
-      }
-      else {
-        // TODO: add response to faile case
-        // TODO: define response.error: true in API
-        // yield put(loginSubmitFailed(response));
-        console.log('errorrrrr');
+
+      } else {
+        yield put(loginSubmitFailed(response));
       }
     }
     catch (error) {
-      console.log(error);
+      console.log('loginSubmitFailed() ', response.token);
+      yield put(loginSubmitFailed(response.token));
     }
   });
 }

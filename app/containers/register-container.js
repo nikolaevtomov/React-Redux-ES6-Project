@@ -6,41 +6,54 @@ import { reduxForm, reset } from 'redux-form';
 import ButtonComponent      from '../components/button';
 import { InputComponent }   from '../components/input';
 import { Error }            from '../components/error';
-import { loginSubmitBegin } from '../actions';
+import { registerSubmitBegin } from '../actions';
 
-export const LogInContainer = props => {
+export const RegisterContainer = props => {
 
-  const { fields, loginSubmit, handleSubmit } = props;
-  const { email, password } = fields;
+  const { fields, registerSubmit, handleSubmit } = props;
+  const { email, password, repassword, name, surname } = fields;
 
   const handleOnSubmit = () => {
-    loginSubmit({
+    registerSubmit({
+      name: name.value,
+      surname: surname.value,
       email: email.value,
       password: password.value,
     });
-    // console.log('enter');
   };
 
   const buttonItems = {
-    name: 'Login',
+    name: 'Register',
     type: 'submit',
     onClickAction: () => {}
   };
 
   return(
-    <section className={'loginContainer'}>
+    <section className={'loginContainer registerContainer'}>
       <form onSubmit={handleSubmit(handleOnSubmit)} className={''}>
 
         <div className={'loginContainer__errors'}>
+          {name.touched && name.error && <Error message={name.error} />}
+          {surname.touched && surname.error && <Error message={surname.error} />}
           {email.touched && email.error && <Error message={email.error} />}
           {password.touched && password.error && <Error message={password.error} />}
+          {repassword.touched && repassword.error && <Error message={repassword.error} />}
         </div>
+
+        <InputComponent name={'name'} placeholder={'Name'} label={'Name'} type={'text'}
+          field={name} />
+
+        <InputComponent name={'surname'} placeholder={'Surname'} label={'Surname'} type={'text'}
+          field={surname} />
 
         <InputComponent name={'email'} placeholder={'E-mail'} label={'E-mail'} type={'email'}
           field={email} />
 
         <InputComponent name={'password'} placeholder={'Password'} label={'Password'} type={'password'}
           field={password} />
+
+        <InputComponent name={'repassword'} placeholder={'Re-Password'} label={'Re-Password'} type={'password'}
+          field={repassword} />
 
         <ButtonComponent items={buttonItems} />
 
@@ -50,7 +63,7 @@ export const LogInContainer = props => {
   );
 }
 
-LogInContainer.propTypes = {
+RegisterContainer.propTypes = {
   fields: PropTypes.object.isRequired
 };
 
@@ -71,28 +84,39 @@ const validate = values => {
     errors.password = '* Password must be at least 6 characters!';
   }
 
+  if (!values.repassword) {
+    errors.repassword = '* Re-Password required!';
+  }
+  else if (values.repassword.length < 6) {
+    errors.repassword = '* Re-Password must be at least 6 characters!';
+  } else if (values.password !== values.repassword){
+    errors.repassword = '* Password must match!';
+  }
+
+  if (!values.name) {
+    errors.name = '* Name required!';
+  }
+
+  if (!values.surname) {
+    errors.surname = '* Surname required!';
+  }
+
   return errors;
 };
 
-export const ConnectedLogInContainer = connect(
+export const ConnectedRegisterContainer = connect(
   (state) => ({
 
   }),
   {
-    loginSubmit: loginSubmitBegin,
+    registerSubmit: registerSubmitBegin,
   }
-)(LogInContainer);
+)(RegisterContainer);
 
 export default reduxForm(
   {
-    form: 'Log-In-Form',
-    fields: ['email', 'password'],
+    form: 'Register-Form',
+    fields: ['email', 'password', 'repassword', 'name', 'surname'],
     validate,
   }
-  // ,
-  // (state) => ({
-  //   initialValues: {
-  //
-  //   },
-  // })
-)(ConnectedLogInContainer);
+)(ConnectedRegisterContainer);

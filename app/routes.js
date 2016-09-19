@@ -6,6 +6,7 @@ import { syncHistoryWithStore }                      from 'react-router-redux'
 import AppContainer                                  from './containers/app-container';
 import HomeContainer                                 from './containers/home-container';
 import LogInContainer                                from './containers/log-in-container';
+import RegisterContainer                             from './containers/register-container';
 import SampleContainer                               from './containers/sample-container';
 import PageNotFound                                  from './containers/page-not-found';
 import { Stores }                                    from './stores';
@@ -18,6 +19,7 @@ export default () => (
 
       <IndexRoute component={ HomeContainer } />
       <Route path="/login" component={ LogInContainer } />
+      <Route path="/register" component={ RegisterContainer } />
       <Route path="/sample" component={ SampleContainer } />
       <Route path="*" component={ PageNotFound } />
 

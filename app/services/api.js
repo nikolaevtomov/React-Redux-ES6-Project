@@ -11,8 +11,8 @@ export function fetchPostLogin(value) {
       'Content-Type': 'application/json',
       body: JSON.stringify(value),
     })
-    .then(response => response.json())
-    .catch(error => console.log(error))
+    .then(response => (response.status !== 200) ? response.status : response.json())
+    .catch(error => console.log('api catch: ', error))
 }
 
 const defaultHeader = {
@@ -25,9 +25,7 @@ export function request(path, header = defaultHeader) {
     .then((response) => {
       return response.json();
     })
-    .catch(error => {
-      console.log(error);
-    });
+    .catch(error => console.log(error));
 }
 
 export function getPeople() {
