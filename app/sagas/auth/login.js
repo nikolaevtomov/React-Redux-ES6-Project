@@ -1,7 +1,7 @@
 
 import { takeLatest, takeEvery }                from 'redux-saga';
 import { apply, call, fork, put, take, select } from 'redux-saga/effects';
-import { fetchPostLogin }                       from '../../services/api';
+import { getAuthLogin }                         from '../../services/api';
 import { push }                                 from 'react-router-redux';
 
 import {
@@ -15,23 +15,24 @@ export default function* watchUserLogin() {
     try {
       const info = yield select(state => state.form['Log-In-Form']);
 
-      const response = yield call(fetchPostLogin, {
+      const result = yield call(getAuthLogin, {
         email: info.email.value,
         password: info.password.value,
       });
 
-      if(!response.error) {
-        console.log(response);
-        yield put(loginSubmitSuccess(response));
+      if(!result.error) {
+        console.log(result);
+        yield put(loginSubmitSuccess(result.response));
         yield put(push('/'));
 
       } else {
-        yield put(loginSubmitFailed(response));
+        console.log(result.response);
+        yield put(loginSubmitFailed(result.response));
       }
     }
     catch (error) {
-      console.log('loginSubmitFailed() ', response.token);
-      yield put(loginSubmitFailed(response.token));
+      console.log('loginSubmitFailed() ', result);
+      yield put(loginSubmitFailed(result));
     }
   });
 }

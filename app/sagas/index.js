@@ -22,7 +22,8 @@ import {
   fetchStarshipsSucceed
 } from '../actions';
 
-import watchUserLogin from './auth/login';
+import watchUserLogin    from './auth/login';
+import watchUserRegister from './auth/register';
 
 export function* initializeAppState() {
   try {
@@ -56,5 +57,6 @@ export function* watchInitializeAppState() {
 
 export default function* startForeman() {
   yield fork(watchInitializeAppState);
+  yield fork(watchUserRegister);
   yield fork(watchUserLogin);
 }
