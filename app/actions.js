@@ -35,5 +35,20 @@ export const fetchVehiclesSucceed = typeValueAction(FETCH_VEHICLES_SUCCEED);
 export const FETCH_STARSHIPS_SUCCEED = 'FETCH_STARSHIPS_SUCCEED';
 export const fetchStarshipsSucceed = typeValueAction(FETCH_STARSHIPS_SUCCEED);
 
-export const START_LOGIN = 'START_LOGIN';
-export const startLogin = typeValueAction(START_LOGIN);
+export const LOGIN_SUBMIT_BEGIN = 'LOGIN_SUBMIT_BEGIN';
+export const loginSubmitBegin = typeValueAction(LOGIN_SUBMIT_BEGIN);
+
+export const LOGIN_SUBMIT_SUCCESS = 'LOGIN_SUBMIT_SUCCESS';
+export const loginSubmitSuccess = typeValueAction(LOGIN_SUBMIT_SUCCESS);
+
+export const LOGIN_SUBMIT_FAILED = 'LOGIN_SUBMIT_FAILED';
+export const loginSubmitFailed = typeValueAction(LOGIN_SUBMIT_FAILED);
+
+export const REGISTER_SUBMIT_BEGIN = 'REGISTER_SUBMIT_BEGIN';
+export const registerSubmitBegin = typeValueAction(REGISTER_SUBMIT_BEGIN);
+
+export const REGISTER_SUBMIT_SUCCESS = 'REGISTER_SUBMIT_SUCCESS';
+export const registerSubmitSuccess = typeValueAction(REGISTER_SUBMIT_SUCCESS);
+
+export const REGISTER_SUBMIT_FAILED = 'REGISTER_SUBMIT_FAILED';
+export const registerSubmitFailed = typeValueAction(REGISTER_SUBMIT_FAILED);

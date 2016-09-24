@@ -9,6 +9,13 @@ export const config = {
     species: '/species/',
     vehicles: '/vehicles/',
     starships: '/starships/'
+  },
+  auth: {
+    api: 'http://localhost:3090',
+    path: {
+      login: '/login',
+      register: '/register',
+    }
   }
 };
 

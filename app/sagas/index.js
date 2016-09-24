@@ -1,5 +1,5 @@
-import { takeLatest, takeEvery }        from 'redux-saga';
-import { apply, call, fork, put, take } from 'redux-saga/effects';
+import { takeLatest }        from 'redux-saga';
+import { fork, put, take } from 'redux-saga/effects';
 
 import {
   getPeople,
@@ -8,7 +8,7 @@ import {
   getSpecies,
   getVehicles,
   getStarships
-} from './services/api';
+} from '../services/api';
 
 import {
   APP_LOADING_STARTED,
@@ -20,7 +20,10 @@ import {
   fetchSpeciesSucceed,
   fetchVehiclesSucceed,
   fetchStarshipsSucceed
-} from './actions';
+} from '../actions';
+
+import watchUserLogin    from './auth/login';
+import watchUserRegister from './auth/register';
 
 export function* initializeAppState() {
   try {
@@ -31,7 +34,7 @@ export function* initializeAppState() {
       getFilms(),
       getSpecies(),
       getVehicles(),
-      getStarships()
+      getStarships(),
     ]);
 
     yield put(fetchPeopleSucceed(people.results));
@@ -54,4 +57,6 @@ export function* watchInitializeAppState() {
 
 export default function* startForeman() {
   yield fork(watchInitializeAppState);
+  yield fork(watchUserRegister);
+  yield fork(watchUserLogin);
 }
