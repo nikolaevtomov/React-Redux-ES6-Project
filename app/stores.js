@@ -1,6 +1,8 @@
 'use strict';
 
 import { createStore, applyMiddleware, compose } from 'redux';
+import { routerMiddleware }                      from 'react-router-redux';
+import { browserHistory }                        from 'react-router';
 import createSagaMiddleware                      from 'redux-saga';
 import ReduxThunk                                from 'redux-thunk';
 import Sagas                                     from './sagas';
@@ -13,7 +15,8 @@ export const Stores = createStore(
   compose(
     applyMiddleware(
       // ReduxThunk,
-      SagaMiddleware
+      SagaMiddleware,
+      routerMiddleware(browserHistory),
     ),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )

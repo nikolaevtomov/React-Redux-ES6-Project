@@ -20,19 +20,19 @@ export default function* watchUserLogin() {
         password: info.password.value,
       });
 
-      if(!result.error) {
+      if(result.ok) {
         console.log(result);
-        yield put(loginSubmitSuccess(result.response));
+        yield put(loginSubmitSuccess(result));
         yield put(push('/'));
 
       } else {
-        console.log(result.response);
-        yield put(loginSubmitFailed(result.response));
+        console.log(result.status);
+        yield put(loginSubmitFailed(result.status));
       }
     }
     catch (error) {
       console.log('loginSubmitFailed() ', result);
-      yield put(loginSubmitFailed(result));
+      yield put(loginSubmitFailed(true));
     }
   });
 }

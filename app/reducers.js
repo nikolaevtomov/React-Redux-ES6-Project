@@ -14,7 +14,6 @@ import user                       from './reducers/user';
 import ui                         from './reducers/ui';
 
 const rootReducer = combineReducers({
-  routing: routerReducer,
   people,
   planets,
   films,
@@ -24,6 +23,7 @@ const rootReducer = combineReducers({
   auth,
   user,
   ui,
+  routing: routerReducer,
   form: formReducer,
 });
 
