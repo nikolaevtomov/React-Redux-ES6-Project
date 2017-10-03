@@ -1,7 +1,7 @@
 'use strict';
 
 export const config = {
-  api: 'http://swapi.co/api',
+  api: 'https://swapi.co/api',
   path: {
     people: '/people/',
     planets: '/planets/',
